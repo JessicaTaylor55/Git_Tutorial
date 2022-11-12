@@ -6,3 +6,5 @@ output: html_document
 ---
 
 # Chapter 12 - Git and GitHub
+
+merge conflict!!
