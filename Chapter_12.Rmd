@@ -1,11 +1,16 @@
 ---
-title: "Chapter_12"
+title: "Chapter 12: Git and GitHub"
 author: "Jess and Nora"
 date: "2022-11-12"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+bibliography: bibliography.bib
 ---
+Most of this comes from @Gandrud_2015.
 
-# Chapter 12 - Git and GitHub
+# Getting Started
 
 ## Create a GitHub Account
 
@@ -14,6 +19,8 @@ output: html_document
 ## Introduce yourself to Git in R
 
 ## DONT BREAK R!!
+
+# Repositories
 
 ## Creating Repositories Locally
 
@@ -31,13 +38,18 @@ output: html_document
 
 ## Pushing and Pulling
 
-``` {r, echo = FALSE}
+``` {r, echo = FALSE, out.width = '80%'}
 
-knitr::include_graphics("images/push_pull_buttons.PNG", dpi = 120)
+knitr::include_graphics("images/push_pull_buttons.PNG")
 ```
+
+# Extras
 
 ## GitIgnore and Large Files
 
 ## Adding and Managing Collaborators
 
 # References
+
+<div id="refs"></div>
+
