@@ -12,3 +12,5 @@ output: html_document
 ## Installing Git
 
 ## Introduce yourself to Git in R
+
+## Making a repository
