@@ -6,6 +6,7 @@ output: html_document
 ---
 
 # Chapter 12 - Git and GitHub
+merge conflict!!--solved :)
 
 ## Create a GitHub Account
 
@@ -14,3 +15,4 @@ output: html_document
 ## Introduce yourself to Git in R
 
 ## Making a repository
+
