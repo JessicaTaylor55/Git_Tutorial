@@ -29,6 +29,8 @@ output: html_document
 
 ### Clonig a Repository
 
+##GitIgnore and Large Files
+
 ## Adding and Managing Collaborators
 
 # References
