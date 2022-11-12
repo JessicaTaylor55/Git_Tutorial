@@ -27,9 +27,16 @@ output: html_document
 
 ### From an existing Project
 
-### Clonig a Repository
+### Cloning a Repository
 
-##GitIgnore and Large Files
+## Pushing and Pulling
+
+``` {r, echo = FALSE}
+
+knitr::include_graphics("images/push_pull_buttons.PNG", dpi = 120)
+```
+
+## GitIgnore and Large Files
 
 ## Adding and Managing Collaborators
 
