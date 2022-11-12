@@ -6,10 +6,11 @@ output: html_document
 ---
 
 # Chapter 12 - Git and GitHub
-merge conflict!!--solved :)
 
 ## Create a GitHub Account
 
 ## Installing Git
 
 ## Introduce yourself to Git in R
+
+## DONT BREAK R!!
