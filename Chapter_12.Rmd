@@ -1,6 +1,6 @@
 ---
 title: "Chapter 12: Git and GitHub"
-author: "Jess and Nora"
+author: "Jessica Taylor and Nora Honkomp"
 date: "2022-11-12"
 output: 
   html_document:
@@ -21,15 +21,78 @@ Most of this comes from @Gandrud_2015.
 
 ## DONT BREAK R!!
 
-# Repositories
+## Basic Structure
 
-## Creating Repositories Locally
+((maybe explain what a repository is and about READ.me files?))
+
+
+# Version Control with Git
+
+The main functionality of Git is version control. This means Git will save all the previous versions of your files so it is easy to go back and see how things were before. In order for this to work effectively, you need to frequently save versions of your work.
+
+## Setting up a Local Repository
+You can create a repository that is located only on your device (therefore it is considered "local"). This will allow you to track changes in a project on your computer and access previous versions of the document at any time. We will look at how to create a local repository using Rstudio, but know that it is also possible to do this using the terminal.
+(See page 96 of @Gandrud_2015)
+
+1. In Rstudio, select 'File' in the top left corner, and then 'New Project'\
+2. When the 'New Project' menu appears, select 'New Directory'\
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/new_directory.PNG")
+```
+
+3. On the following screen, select 'New Project'\
+4. Finally, type the name you want to use for your new project, browse to the location where you want it saved on your computer, and select the "Create a git repository" box.\
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/create_git_repository.PNG")
+```
+
+You now have a folder with a .Rproj object and a .gitignore file. 
 
 ## Adding and Committing
 
+You can create or bring in any files (including your data) to this project folder, and Git will track changes made to them. In order to do this, you will need to "add" files that have been changed and "commit" these changes.
+
+Once you are satisfied with the changes you have made and saved any changed files, you will "add" those files to your commit by checking the boxes in the 'Git' tab in your Rstudio window.
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/adding.PNG")
+```
+
+In order to save a version of your project as it is right now (with these added files), you will need to "commit". To do this, select the button that says "Commit" above the boxes you just checked. This will open a new window where you can see the list of files that you added. 
+
+Type a useful message in the "Commit Message" box briefly describing the changes you made in this version. Then hit "Commit".
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/committing.PNG")
+```
+
+You should see a window pop up telling you what changes were successfully made. If this window ever says "failed", "execution halted", or "aborted", this means the commit did not work and you should read the message closely to determine why. 
+
+Save, add, and commit frequently in order to get the most use out of your version control.
+
 ## Branches and merging
 
+If you want to try some changes to your files without totally committing to them yet (i.e. test run some code) you can create a branch. This will allow you to make changes to your files while maintainig an unchanged copy on the main branch. 
+
+To create a branch, select the button with small purple shapes on the right hand side of your 'Git' tab in Rstudio. 
+
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/branch_button.PNG")
+```
+
+# Remote storage with GitHub
+
 ## Setting up Remote Repositories
+
+You can set up a repository that is accessible from the internet (referred to as "remote") and  can be accessed by other people. This is done using a combination of Git and GitHub. Remote repositories are nice because you can access them from different computers, assuming you have internet access, and your whole team can make edits on the same documents.
 
 ### New Repository
 
@@ -44,11 +107,21 @@ Most of this comes from @Gandrud_2015.
 knitr::include_graphics("images/push_pull_buttons.PNG")
 ```
 
+## Adding and Managing Collaborators
+
+## Merge Conflicts
+
 # Extras
 
 ## GitIgnore and Large Files
 
-## Adding and Managing Collaborators
+## Amend Commits
+
+## Recovering old versions
+
+((this might get covered in the version control section?))
+
+## Tags
 
 # References
 
