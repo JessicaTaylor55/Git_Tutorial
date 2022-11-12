@@ -15,5 +15,20 @@ output: html_document
 
 ## DONT BREAK R!!
 
-These are my super secret and important changes.
-OMG SO SECRET
+## Creating Repositories Locally
+
+## Adding and Committing
+
+## Branches and merging
+
+## Setting up Remote Repositories
+
+### New Repository
+
+### From an existing Project
+
+### Clonig a Repository
+
+## Adding and Managing Collaborators
+
+# References
