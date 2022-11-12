@@ -13,3 +13,5 @@ merge conflict!!--solved :)
 ## Installing Git
 
 ## Introduce yourself to Git in R
+
+These are my super secret and important changes.
