@@ -14,3 +14,6 @@ output: html_document
 ## Introduce yourself to Git in R
 
 ## DONT BREAK R!!
+
+These are my super secret and important changes.
+OMG SO SECRET
