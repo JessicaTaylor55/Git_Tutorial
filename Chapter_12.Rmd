@@ -37,7 +37,7 @@ You can create a repository that is located only on your device (therefore it is
 1. In Rstudio, select `File` in the top left corner, and then `New Project`\
 2. When the New Project menu appears, select `New Directory`\
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/new_directory.PNG")
 ```
@@ -45,7 +45,7 @@ knitr::include_graphics("images/new_directory.PNG")
 3. On the following screen, select `New Project`\
 4. Finally, type the name you want to use for your new project, browse to the location where you want it saved on your computer, and select the `Create a git repository` box.\
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/create_git_repository.PNG")
 ```
@@ -58,7 +58,7 @@ You can create or bring in any files (including your data) to this project folde
 
 Once you are satisfied with the changes you have made and saved any changed files, you will "add" those files to your commit by checking the boxes in the `Git` tab in your Rstudio window.
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/adding.PNG")
 ```
@@ -67,7 +67,7 @@ In order to save a version of your project as it is right now (with these added 
 
 Type a useful message in the `Commit Message` box briefly describing the changes you made in this version. Then hit `Commit`.
 
-``` {r, echo = FALSE, out.width = '80%'}
+``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/committing.PNG")
 ```
@@ -83,7 +83,7 @@ If you want to try some changes to your files without totally committing to them
 To create a branch, select the button with small purple shapes on the right hand side of your `Git` tab in Rstudio. 
 
 
-``` {r, echo = FALSE, out.width = '80%'}
+``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/branch_button.PNG")
 ```
@@ -92,7 +92,7 @@ You can now create a new branch, for example one called "test". This is essentia
 
 To switch between branches, select the drop down menu to the right of the button you used to create a new branch. 
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/branches.PNG")
 ```
@@ -105,7 +105,7 @@ You can have multiple branches coming off your main branch at once, so you can t
 
 You can see a history of your commits on different branches by selecting the clock icon (designating "History") near the `commit` button on your `Git` tab. You will initially see the history for only one of your branches, but if you select the drop down menu of branches at the top of this window, you can select `all branches` and see how the branches compare to one another.
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/history_button.PNG")
 
@@ -120,7 +120,7 @@ To merge a side branch with the main branch (changing the version of your repo p
 2. select the `Terminal` tab next to the `Console` tab in the section of Rstudio displaying your console. \
 3. type `git merge ` and then the name of the branch you want to merge into the main branch. \
 
-``` {r, echo = FALSE, out.width = '80%'}
+``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/merge_terminal.PNG")
 
@@ -142,7 +142,7 @@ To set up a remote repository, make sure you are able to log into GitHub. We wil
 
 To create a brand new repository, click on the plus sign near your profile picture in the top right corner of GitHub and select `New repository`.
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '40%', fig.align = 'center'}
 
 knitr::include_graphics("images/your_repository.PNG")
 ```
@@ -150,7 +150,7 @@ knitr::include_graphics("images/your_repository.PNG")
 
 On the next page, type in a name for your repository and choose whether you want it to be public or private. It is recommended you select the box to create a README file. This will give you a place to describe the layout of your repository and the purpose of each file. Without a README file, visitors to your repository (and maybe future you) might not be able to figure out how to properly use the files in your repository, leading to your working being non-reproducible.
 
-``` {r, echo = FALSE, out.width = '80%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/readme.PNG")
 ```
@@ -161,7 +161,7 @@ Once your repository is created, you will see only the README file is present. T
 
 1. In R studio, follow the instructions for creating a new project, but when you see the following menu, select `Version Control` this time.\
 
-``` {r, echo = FALSE, out.width = '80%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/version_control_directory.PNG")
 ```
@@ -170,14 +170,14 @@ knitr::include_graphics("images/version_control_directory.PNG")
 3. Return to the GitHub page for the repository you created and select the green `Code` button.\
 4. Copy the HTTPS link from the menu that pops up.
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '50%', fig.align = 'center'}
 
 knitr::include_graphics("images/repo_link.PNG")
 ```
 
 5. Return to Rstudio and past the link in the Repository URL line at the top of the popped up window. Make sure to check the file path that is currently set and use the `Browse` button if you want to save the folder for this directory in a different place.
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
 knitr::include_graphics("images/clone_repo.PNG")
 ```
@@ -194,7 +194,7 @@ Here are the steps to follow if you have a project folder with a `.Rproj` file i
 
 1. follow the steps above for creating a New repository, but this time do not click the box to create a README file. This will bring you to a page with a "Quick Set Up" link. Keep this page open for later.\
 
-``` {r, echo = FALSE, out.width = '60%'}
+``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/quick_setup.PNG")
 ```
@@ -242,7 +242,7 @@ Now when you return to GitHub and refresh your repository page, you should see a
 
 ## "Pushing" and "Pulling"
 
-``` {r, echo = FALSE, out.width = '80%'}
+``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/push_pull_buttons.PNG")
 ```
