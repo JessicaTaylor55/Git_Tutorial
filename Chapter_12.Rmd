@@ -237,17 +237,55 @@ $ git push orgin main
 
 Now when you return to GitHub and refresh your repository page, you should see all of the files from your existing project.
 
+You can add a `README` and `.gitignore` on the GitHub website by selecting "Add file" on the repository's page. When you make a .gitignore file, it may suggest you use a template, in which case, select the `R` template from the drop down list and it will automatically fill the document with file types that should typically not be tracked.
 
 ### Cloning a Repository
 
+If you want to join a repository that has already been created, you can either find the repository by searching for it on GitHub (if it is publicly available) or contact the creator and have them add you as a collaborator to the repository. Either way, you will follow steps 1-5 in teh "New Repository" section above, but this time the link is coming from the already created repository. 
+
+In cases where the repository is not accessible (you do not have cloning priveledges), you will have to create a pull request. 
+
+
 ## "Pushing" and "Pulling"
+
+Once you have your remote repository ready, you can make changes to the files and "add" and "commit" them like we did in the "Version Control" section above. However, now we must take steps to make sure our local version of the repository is up-to-date with the online version, and the versions that all other collaborators have on their computers. 
+
+To do this, we will need to push and pull. "Pulling" is when we bring recent and out-of-sync changes from the online version to our local device. "Pushing" is the opposite; we are sending our commits to the online version to update it with our recent changes. This will allow anyone else working in the repository to pull your changes onto their computer.
+
+To push and pull, use the blue and green arrows on the `Git` tab in R studio.
 
 ``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/push_pull_buttons.PNG")
 ```
 
+You may also notice the next time you "commit" your changes, these same push and pull buttons are located above the "Commit Message" box on the pop up window. 
+
+It is good practice to pull each time you are about to start working in a repository and to push after you commit, or at least before once at the end of your working period within a repository for the day. Keeping good push and pull habits will help you avoid merge conflicts with collaborators or yourself if you work on a project on more than one computer.
+
 ## Adding and Managing Collaborators
+
+Collaborative coding is a huge benefit of GitHub. In order to invite your collaborators to clone your remote repository, you will need to know their GitHub username, or at least their email address. 
+
+1. On your repository page on GitHub, select `Settings` in the middle of the banner near the top of the page. 
+
+``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
+
+knitr::include_graphics("images/settings_button.PNG")
+```
+
+2. In the menu on the left, select the `Collaborators` page.
+
+``` {r, echo = FALSE, out.width = '40%', fig.align = 'center'}
+
+knitr::include_graphics("images/collaborators.PNG")
+```
+
+3. Enter your password, and then select `Add People` under `Manage Access`
+
+Add your collaborators one at a time. This will send them a message inviting them to join the repository. 
+
+As the owner of the repository, you will be able to remove people from the repository at any time.
 
 ## "Merge Conflicts"
 
