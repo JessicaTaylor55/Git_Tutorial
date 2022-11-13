@@ -23,7 +23,7 @@ Most of this comes from @Gandrud_2015.
 
 ## Basic Structure
 
-((maybe explain what a repository is and about READ.me files?))
+((maybe explain what a repository is and about README files?))
 
 
 # Version Control (with Git)
@@ -116,9 +116,9 @@ If you find a method that works in a side branch and you want to bring it in to 
 
 To merge a side branch with the main branch (changing the version of your repo present main branch to match that of the successful side branch), we will use the terminal. 
 
-1. Make sure you are on the `main` branch
-2. select the `Terminal` tab next to the `Console` tab in the section of Rstudio displaying your console. 
-3. type `git merge ` and then the name of the branch you want to merge into the main branch. 
+1. Make sure you are on the `main` branch\
+2. select the `Terminal` tab next to the `Console` tab in the section of Rstudio displaying your console. \
+3. type `git merge ` and then the name of the branch you want to merge into the main branch. \
 
 ``` {r, echo = FALSE, out.width = '80%'}
 
@@ -132,13 +132,111 @@ One way to check if the branches merged he way you intended is to select the his
 
 # Remote Storage/Collaboration (with GitHub)
 
+With GitHub, you can set up a repository that is accessible from the internet (referred to as "remote") and  can be accessed by other people. Remote repositories are nice because you can access them from different computers, assuming you have internet access, giving you access to your project wherever you are and creating a back up in case something happens to your computer. Github also allows for structured collaboration, so your whole team can make edits on the same documents and keep track of what has been changed where..
+
 ## Setting Up Remote Repositories
 
-You can set up a repository that is accessible from the internet (referred to as "remote") and  can be accessed by other people. This is done using a combination of Git and GitHub. Remote repositories are nice because you can access them from different computers, assuming you have internet access, and your whole team can make edits on the same documents.
+To set up a remote repository, make sure you are able to log into GitHub. We will go over three different way to make repositories: starting from scratch with a new repository, creating a repository for an already started project, and accessing a repository made by a collaborator.
 
 ### New Repository
 
+To create a brand new repository, click on the plus sign near your profile picture in the top right corner of GitHub and select `New repository`.
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/your_repository.PNG")
+```
+
+
+On the next page, type in a name for your repository and choose whether you want it to be public or private. It is recommended you select the box to create a README file. This will give you a place to describe the layout of your repository and the purpose of each file. Without a README file, visitors to your repository (and maybe future you) might not be able to figure out how to properly use the files in your repository, leading to your working being non-reproducible.
+
+``` {r, echo = FALSE, out.width = '80%'}
+
+knitr::include_graphics("images/readme.PNG")
+```
+
+Now you can click `Create Repository`.
+
+Once your repository is created, you will see only the README file is present. To create other files, let's create a directory for this repo on our computer. 
+
+1. In R studio, follow the instructions for creating a new project, but when you see the following menu, select `Version Control` this time.\
+
+``` {r, echo = FALSE, out.width = '80%'}
+
+knitr::include_graphics("images/version_control_directory.PNG")
+```
+
+2. On the next window, select `Git`.\
+3. Return to the GitHub page for the repository you created and select the green `Code` button.\
+4. Copy the HTTPS link from the menu that pops up.
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/repo_link.PNG")
+```
+
+5. Return to Rstudio and past the link in the Repository URL line at the top of the popped up window. Make sure to check the file path that is currently set and use the `Browse` button if you want to save the folder for this directory in a different place.
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/clone_repo.PNG")
+```
+
+Your repository is now set up in a new project in Rstudio, and you can begin by creating an Rmarkdown, R Script, etc.
+
+Note, you can edit the contents of the README file by opening it in Rstudio.
+
 ### From an Existing Project
+
+You may find yourself wanting to create a repo on GitHub for a project you have already started working on. Fortunately it is easy to start version control tracking on a project and add the project to a remote repository. 
+
+Here are the steps to follow if you have a project folder with a `.Rproj` file in it and your directory is not already being tracked with Git:
+
+1. follow the steps above for creating a New repository, but this time do not click the box to create a README file. This will bring you to a page with a "Quick Set Up" link. Keep this page open for later.\
+
+``` {r, echo = FALSE, out.width = '60%'}
+
+knitr::include_graphics("images/quick_setup.PNG")
+```
+
+2. Navigate to the existing directory that you are trying to add to GitHub and open the `.Rproj` file./
+3. Select the `Terminal` tab next to `Console` and enter the following lines of code.
+
+``` {bash, eval =  FALSE}
+$ git init -b main
+```
+"git" tells bash what program we want to use \ 
+"init" tells bash to initialize a Git repository fir this directory \
+"-b main" is saying we want to create a branch called "main" \
+
+```{bash, eval = FALSE}
+$ git add .
+```
+
+This will add all of the files within the current folder to the repository.
+You may get a lot of warnings because you have a `.Rproj` file and potentially a `.Rhistory` file in this folder which are not usually ideal to track. We will take care of this by adding these file names to the .gitignore file shortly. 
+
+``` {bash, eval = FALSE}
+$ git commit -m "First commit"
+```
+
+This line creates your first commit. You can change the commit message to anything that makes sense to you.
+
+4. Go back to GitHub and copy the Quick start link. Type the following code in the terminal, but replace `<REMOTE_URL>` with the copied link.
+
+```{bash, eval = FALSE}
+$ git remote add origin <REMOTE_URL>
+# Replace "<REMOTE_URL>" with url from GitHub
+```
+
+5. Last, we will push these changes to GitHub. We will further discuss what this means later, but for now run the followin line in the terminal.
+
+```{bash, eval = FALSE}
+$ git push orgin main
+```
+
+Now when you return to GitHub and refresh your repository page, you should see all of the files from your existing project.
+
 
 ### Cloning a Repository
 
