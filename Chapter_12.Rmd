@@ -21,10 +21,6 @@ klippy::klippy(
 )
 ```
 
-```{r, warning = FALSE}
-library(usethis)
-```
-
 # Introduction
 
 Being able to track changes, revert to previous versions, and collaborate efficiently are important parts of reproducibility and transparency. In this chapter, we will explore how to add those elements to your workflow using Git and GitHub. Git is a version control software installed locally, and GitHub is a cloud-based system to store and share your work online.
@@ -46,6 +42,14 @@ The following resources have similar information and each will get you to roughl
 -   [Oh S#!\*, Git!?!](https://ohshitgit.com/) provides tools for when mistakes are made (e.g., committing to the wrong branch) and how to fix them in the terminal. Note: this page contains a lot of swear words.
 
 # Getting Started
+
+## Install/Load Required Package
+
+Load the following package in RStudio. If you do not have it installed, you can install it using `install.packages("usethis")`. 
+
+```{r, warning = FALSE}
+library(usethis)
+```
 
 ## Create a GitHub Account
 
