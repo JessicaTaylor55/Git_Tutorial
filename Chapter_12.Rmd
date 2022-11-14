@@ -88,7 +88,7 @@ Once Git is successfully installed and you have a GitHub account, you will need 
 
 Enter the following in the `Terminal` tab, substituting the user name and email with your GitHub user name and email:
 
-```{r}
+```{r, eval = FALSE}
 usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepriceisright.org")
 ```
 
