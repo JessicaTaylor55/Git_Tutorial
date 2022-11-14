@@ -39,13 +39,13 @@ The following resources have similar information and each will get you to roughl
 -   This chapter is largely based off of chapter 5 in @Gandrud_2015.
 -   [Happy Git With R](https://happygitwithr.com/index.html) provides a good starter guide with a few different approaches depending on your needs.
 -   [This GitHub Doc](https://docs.github.com/en/get-started/quickstart) focuses more on using GitHub.
--   [Oh S#!\*, Git!?!](https://ohshitgit.com/) provides tools for when mistakes are made (e.g., committing to the wrong branch) and how to fix them in the terminal. Note: this page contains a lot of swear words.
+-   [Oh S#!\*, Git!?!](https://ohshitgit.com/) provides tools for when mistakes are made (e.g., committing to the wrong branch) and how to fix them in the terminal (See the section [Install a Git Client] to do these things using a graphic user interface). Note: this page contains a lot of swear words.
 
 # Getting Started
 
 ## Install/Load Required Package
 
-Load the following package in RStudio. If you do not have it installed, you can install it using `install.packages("usethis")`. 
+Load the following package in RStudio. If you do not have it installed, you can install it using `install.packages("usethis")`.
 
 ```{r, warning = FALSE}
 library(usethis)
@@ -376,6 +376,10 @@ As the owner of the repository, you will be able to remove people from the repos
 ## Recovering old versions
 
 ((this might get covered in the version control section?)) ((We covered it in a previous class with the SHA. Maybe we can just do a quick reminder?)) \## "Tags"
+
+# Install a Git Client
+
+Using a Git client software helps visualize the workflow and allows you to use commands in the graphic user interface (GUI) that you would normally need to type into the terminal.
 
 # References
 
