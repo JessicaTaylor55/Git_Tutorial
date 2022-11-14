@@ -28,6 +28,19 @@ library(usethis)
 
 Most of this comes from @Gandrud_2015.
 
+# Introduction
+
+Being able to track changes, revert to previous versions, and collaborate efficiently are important parts of reproducibility and transparency. In this chapter, we will explore how to add those elements to your workflow using Git and GitHub. Git is a version control software installed locally, and GitHub is a cloud-based system to store and share your work online. 
+
+# Learning Outcomes
+
+  * Create a repository to track changes and version history locally using Git.
+  * Use branches (copies) to work on a documents in a repository without changing the master. 
+  * Use GitHub to store a repository remotely.
+  * Become familiar with the basics of using GitHub for file sharing and collaboration. 
+
+# Resources
+
 # Getting Started
 
 ## Create a GitHub Account
@@ -113,7 +126,7 @@ knitr::include_graphics("images/create_git_repository.PNG")
 
 You now have a folder with a `.Rproj` object and a `.gitignore` file. There is also a hidden `.git` folder that stores all the project information, including the version history files (commit history). 
 
-## Adding and Committing
+## Adding, Staging, and Committing
 
 You can create new files or move existing files (including your data) into this project folder, and Git can track changes made to them. In order to do this, you will need to "add" files that have been created or moved into the project and "commit" these changes.
 
