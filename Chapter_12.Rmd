@@ -9,15 +9,78 @@ output:
 bibliography: bibliography.bib
 link-citations: yes
 ---
+
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(
+  lang = c("r", "markdown", "bash"),
+  all_precode = FALSE,
+  position = c("top", "left"),
+  color = "auto",
+  tooltip_message = "Copy code",
+  tooltip_success = "Copied!"
+)
+```
+
+```{r, warning = FALSE}
+library(usethis)
+```
+
+
 Most of this comes from @Gandrud_2015.
 
 # Getting Started
 
 ## Create a GitHub Account
 
+You will need to access GitHub with an account for this tutorial. If you don't already have an account, you can sign up for free here: https://github.com/
+
+You will be asked to sign up using your email, a password you create, and a username. Your username is what will be visible to others that you collaborate with, so it's a good idea to make it something straight forward and professional. You can skip personalization for now by scrolling to the bottom of the page. 
+
 ## Installing Git
 
+You will need the program Git for this tutorial. First, let's check to see if Git is already installed. 
+
+Select the `Terminal` tab next to the `Console` tab in the section of Rstudio displaying your console (bottom-left panel). Enter the following:
+
+```{bash}
+which git
+git --version
+```
+
+You will get something like the above output if Git is already installed. If it is not installed, see below. 
+
+### Windows
+
+Download the program here: https://git-scm.com/downloads
+
+### Mac
+
+You may have been prompted to install command line developer tools. You should accept this offer. If you were not prompted, use this command:
+
+```{bash, eval = FALSE}
+xcode-select --install
+```
+
 ## Introduce Yourself to Git in R
+
+Once Git is successfully installed and you have a GitHub account, you will need to let R/Git know your account information to access the remote repositories. 
+
+Enter the following in the `Terminal` tab, substituting the user name and email with your GitHub user name and email: 
+
+```{r}
+usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepriceisright.org")
+```
+
+## Get a Personal Access Token (PAT)
+
+**Explain what a PAT does here** 
+**Save the PAT somewhere**
+
+```{r, eval = FALSE}
+usethis::create_github_token()
+gitcreds::gitcreds_set()
+```
+
 
 ## Basic Structure
 
@@ -61,7 +124,7 @@ First, you will need to save the new file or move an existing file into the proj
 knitr::include_graphics("images/adding.PNG")
 ```
 
-In order to save a version of your project as it is right now (with these added files), you will need to "commit". To do this, select the `Commit` button, above the boxes you just checked. This will open a new window where you can see the list of files that you added. 
+In order to save a version of your project as it is right now (with these added files), you will need to commit. To do this, select the `Commit` button, above the boxes you just checked. This will open a new window where you can see the list of files that you added. 
 
 Type a useful message in the `Commit message` box briefly describing the changes you made in this version. Then hit `Commit`.
 
@@ -76,7 +139,9 @@ Save and commit frequently in order to get the most use out of your version cont
 
 ## Branches and Merging
 
-If you want to try some changes to your files without totally committing to them yet (i.e. test run some code) you can create a branch. This will allow you to make changes to your files while maintaining an unchanged copy on the main branch. 
+### Branches
+
+A new repository will have one branch called `main`. You can think of this as the master. You can create additional branches which are an exact copy of the main branch where you can make changes without committing them to the master. This is useful when several people are working on the same thing, or if you want to try multiple approaches to the same file (i.e. test run some code).
 
 To create a branch, select the button with small purple shapes on the right hand side of your `Git` tab in Rstudio. 
 
@@ -86,7 +151,7 @@ To create a branch, select the button with small purple shapes on the right hand
 knitr::include_graphics("images/branch_button.PNG")
 ```
 
-You can now create a new branch, for example one called "test". This is essentially a copy of everything that is in your repository, and making changes here will not affect the original copy, called the "main" branch.
+You can now create a new branch, for example one called "test". This is essentially a copy of everything that is in your repository, and making changes here will not affect the `main` branch.
 
 To switch between branches, select the drop down menu to the right of the button you used to create a new branch. 
 
@@ -99,9 +164,9 @@ You can easily switch to a different branch by selecting it on this menu.
 
 Note that any files you create on a side branch will not show up in the main branch unless you merge them. 
 
-You can have multiple branches coming off your main branch at once, so you can try multiple different approaches (or by multiple people) simultaneously. But, anytime you make a new branch, it will start as a duplicate of the main branch.
+You can have multiple branches coming off your main branch at once, so you can try multiple different approaches (or by multiple people) simultaneously. Anytime you make a new branch it will start as a duplicate of the main branch.
 
-You can see a history of your commits on different branches by selecting the clock icon (designating "History") near the `commit` button on your `Git` tab. You will initially see the history for only one of your branches, but if you select the drop down menu of branches at the top of this window, you can select `all branches` and see how the branches compare to one another.
+You can see a history of your commits on different branches by selecting the clock icon (designating "History") near the `Commit` button on your `Git` tab. You will initially see the history for only the branch you are currently in, but if you select the drop down menu of branches at the top of this window, you can select another branch or `all branches` and see how the branches compare to one another.
 
 ``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
@@ -110,13 +175,15 @@ knitr::include_graphics("images/history_button.PNG")
 ```
 
 
+### Merging
+
 If you find a method that works in a side branch and you want to bring it in to the main branch, this is called a merge. 
 
-To merge a side branch with the main branch (changing the version of your repo present main branch to match that of the successful side branch), we will use the terminal. 
+To merge a side branch with the main branch (changing the version of your repo `main` branch to match that of the successful side branch), we will use the terminal. 
 
 1. Make sure you are on the `main` branch\
-2. select the `Terminal` tab next to the `Console` tab in the section of Rstudio displaying your console. \
-3. type `git merge ` and then the name of the branch you want to merge into the main branch. \
+2. Select the `Terminal` tab next to the `Console` tab in the section of Rstudio displaying your console. \
+3. Type `git merge ` and then the name of the branch you want to merge into the main branch. \
 
 ``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
@@ -124,17 +191,17 @@ knitr::include_graphics("images/merge_terminal.PNG")
 
 ```
 
-The repository of your main branch should now match the repository of whatever branch you merged with it. 
+The repository of your `main` branch should now match the repository of whatever branch you merged with it. 
 
-One way to check if the branches merged he way you intended is to select the history button again (make sure you go to `all branches`) and check that the "HEAD" (which is the main branch) is at the same level as whichever branch you merged it with.
+One way to check if the branches merged the way you intended is to select the history button again (make sure you go to `all branches`) and check that the "HEAD" (which is the main branch) is at the same level as whichever branch you merged it with.
 
 # Remote Storage/Collaboration (with GitHub)
 
-With GitHub, you can set up a repository that is accessible from the internet (referred to as "remote") and  can be accessed by other people. Remote repositories are nice because you can access them from different computers, assuming you have internet access, giving you access to your project wherever you are and creating a back up in case something happens to your computer. Github also allows for structured collaboration, so your whole team can make edits on the same documents and keep track of what has been changed where..
+With GitHub, you can set up a repository that is accessible from the internet (referred to as "remote") and can be accessed by other people. Remote repositories are nice because you can access them from different computers, assuming you have internet access, giving you access to your project wherever you are and creating a back up in case something happens to your computer. Github also allows for structured collaboration, so your whole team can make edits on the same documents and keep track of what has been changed where.
 
 ## Setting Up Remote Repositories
 
-To set up a remote repository, make sure you are able to log into GitHub. We will go over three different way to make repositories: starting from scratch with a new repository, creating a repository for an already started project, and accessing a repository made by a collaborator.
+To set up a remote repository, make sure you are able to log into GitHub. We will go over three different ways to make repositories: starting from scratch with a new repository, creating a repository for an already started project, and accessing a repository made by a collaborator.
 
 ### New Repository
 
@@ -173,7 +240,7 @@ knitr::include_graphics("images/version_control_directory.PNG")
 knitr::include_graphics("images/repo_link.PNG")
 ```
 
-5. Return to Rstudio and past the link in the Repository URL line at the top of the popped up window. Make sure to check the file path that is currently set and use the `Browse` button if you want to save the folder for this directory in a different place.
+5. Return to Rstudio and paste the link in the Repository URL line at the top of the popped up window. Make sure to check the file path that is currently set and use the `Browse` button if you want to save the folder for this directory in a different place.
 
 ``` {r, echo = FALSE, out.width = '60%', fig.align = 'center'}
 
@@ -186,18 +253,18 @@ Note, you can edit the contents of the README file by opening it in Rstudio.
 
 ### From an Existing Project
 
-You may find yourself wanting to create a repo on GitHub for a project you have already started working on. Fortunately it is easy to start version control tracking on a project and add the project to a remote repository. 
+You may find yourself wanting to create a repo on GitHub for a project you have already started working on. Fortunately, it is easy to start version control tracking on a project and add the project to a remote repository. 
 
 Here are the steps to follow if you have a project folder with a `.Rproj` file in it and your directory is not already being tracked with Git:
 
-1. follow the steps above for creating a New repository, but this time do not click the box to create a README file. This will bring you to a page with a "Quick Set Up" link. Keep this page open for later.\
+1. Follow the steps above for creating a New repository, but this time do not click the box to create a README file. This will bring you to a page with a "Quick Set Up" link. Keep this page open for later.\
 
 ``` {r, echo = FALSE, out.width = '80%', fig.align = 'center'}
 
 knitr::include_graphics("images/quick_setup.PNG")
 ```
 
-2. Navigate to the existing directory that you are trying to add to GitHub and open the `.Rproj` file./
+2. Go to RStudio and open the `.Rproj` file that will be added to the GitHub repository./
 3. Select the `Terminal` tab next to `Console` and enter the following lines of code.
 
 ``` {bash, eval =  FALSE}
@@ -227,7 +294,7 @@ $ git remote add origin <REMOTE_URL>
 # Replace "<REMOTE_URL>" with url from GitHub
 ```
 
-5. Last, we will push these changes to GitHub. We will further discuss what this means later, but for now run the followin line in the terminal.
+5. Last, we will push these changes to GitHub. We will further discuss what this means later, but for now run the following line in the terminal.
 
 ```{bash, eval = FALSE}
 $ git push orgin main
@@ -239,16 +306,16 @@ You can add a `README` and `.gitignore` on the GitHub website by selecting "Add 
 
 ### Cloning a Repository
 
-If you want to join a repository that has already been created, you can either find the repository by searching for it on GitHub (if it is publicly available) or contact the creator and have them add you as a collaborator to the repository. Either way, you will follow steps 1-5 in teh "New Repository" section above, but this time the link is coming from the already created repository. 
+If you want to join a repository that has already been created, you can either find the repository by searching for it on GitHub (if it is publicly available) or contact the creator and have them add you as a collaborator to the repository. Either way, you will follow steps 1-5 in the "New Repository" section above, but this time the link is coming from the already created repository. 
 
-In cases where the repository is not accessible (you do not have cloning priveledges), you will have to create a pull request. 
+In cases where the repository is not accessible (you do not have cloning priveleges), you will have to create a pull request. 
 
 
 ## "Pushing" and "Pulling"
 
 Once you have your remote repository ready, you can make changes to the files and "add" and "commit" them like we did in the "Version Control" section above. However, now we must take steps to make sure our local version of the repository is up-to-date with the online version, and the versions that all other collaborators have on their computers. 
 
-To do this, we will need to push and pull. "Pulling" is when we bring recent and out-of-sync changes from the online version to our local device. "Pushing" is the opposite; we are sending our commits to the online version to update it with our recent changes. This will allow anyone else working in the repository to pull your changes onto their computer.
+To do this, we will need to "push" and "pull". "Pulling" is when we bring recent and out-of-sync changes from the online version to our local device. "Pushing" is the opposite; we are sending our commits to the online version to update it with our recent changes. This will allow anyone else working in the repository to "pull" your changes onto their computer.
 
 To push and pull, use the blue and green arrows on the `Git` tab in R studio.
 
@@ -259,7 +326,7 @@ knitr::include_graphics("images/push_pull_buttons.PNG")
 
 You may also notice the next time you "commit" your changes, these same push and pull buttons are located above the "Commit Message" box on the pop up window. 
 
-It is good practice to pull each time you are about to start working in a repository and to push after you commit, or at least before once at the end of your working period within a repository for the day. Keeping good push and pull habits will help you avoid merge conflicts with collaborators or yourself if you work on a project on more than one computer.
+It is good practice to "pull" each time you are about to start working in a repository and to push after you commit, or at least once at the end of your working period within a repository for the day. Keeping good "push" and "pull" habits will help you avoid merge conflicts with collaborators or yourself if you work on a project on more than one computer.
 
 ## Adding and Managing Collaborators
 
@@ -296,7 +363,7 @@ As the owner of the repository, you will be able to remove people from the repos
 ## Recovering old versions
 
 ((this might get covered in the version control section?))
-
+((We covered it in a previous class with the SHA. Maybe we can just do a quick reminder?))
 ## "Tags"
 
 # References
