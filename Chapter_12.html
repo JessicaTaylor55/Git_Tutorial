@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jessica Taylor and Nora Honkomp" />
 
-<meta name="date" content="2022-11-12" />
+<meta name="date" content="2022-11-15" />
 
 <title>Chapter 12: Git and GitHub</title>
 
@@ -1669,7 +1669,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Chapter 12: Git and GitHub</h1>
 <h4 class="author">Jessica Taylor and Nora Honkomp</h4>
-<h4 class="date">2022-11-12</h4>
+<h4 class="date">2022-11-15</h4>
 
 </div>
 
@@ -1727,7 +1727,8 @@ words.</li>
 <p>Load the following package in RStudio. If you do not have it
 installed, you can install it using
 <code>install.packages(&quot;usethis&quot;)</code>.</p>
-<pre class="r"><code>library(usethis)</code></pre>
+<pre class="r"><code>library(usethis)
+library(gitcreds)</code></pre>
 </div>
 <div id="create-a-github-account" class="section level2">
 <h2>Create a GitHub Account</h2>
@@ -1773,10 +1774,17 @@ remote repositories.</p>
 the user name and email with your GitHub user name and email:</p>
 <pre class="r"><code>usethis::use_git_config(user.name = &quot;Bob Barker&quot;, user.email = &quot;bobbarker@thepriceisright.org&quot;)</code></pre>
 </div>
-<div id="get-a-personal-access-token-pat" class="section level2">
-<h2>Get a Personal Access Token (PAT)</h2>
-<p><strong>Explain what a PAT does here</strong> <strong>Save the PAT
-somewhere</strong></p>
+<div id="get-a-personal-access-token" class="section level2">
+<h2>Get a Personal Access Token</h2>
+<p>A personal access token (PAT) is used for GitHub as a type of
+authentication. You used to be able to use your username and password,
+but not any more. The token-based authentication has increased
+security.</p>
+<p>You do not need to run create_github_token() if you already have one.
+If you are unsure if you have already input your PAT into RStudio, you
+can run gitcreds_set() and R will tell you your current credentials.
+Select option <code>3: See the password / token</code>. Change the
+current password to your new token.</p>
 <pre class="r"><code>usethis::create_github_token()
 gitcreds::gitcreds_set()</code></pre>
 </div>
