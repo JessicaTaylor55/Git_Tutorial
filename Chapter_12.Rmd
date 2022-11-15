@@ -10,7 +10,7 @@ bibliography: bibliography.bib
 link-citations: yes
 ---
 
-```{r klippy, echo=FALSE, include=TRU}
+```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy(
   lang = c("r", "markdown", "bash"),
   all_precode = FALSE,
