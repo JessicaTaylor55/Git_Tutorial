@@ -12,7 +12,7 @@ link-citations: yes
 
 <!-- can't install klippy -->
 
-```{r klippy, echo=FALSE, include=TRUE, eval = FALSE}
+```{r klippy, echo=FALSE, include=TRU}
 klippy::klippy(
   lang = c("r", "markdown", "bash"),
   all_precode = FALSE,
@@ -53,6 +53,7 @@ Load the following packages in RStudio. If you do not have them installed, you c
 ```{r, warning = FALSE}
 library(usethis)
 library(gitcreds)
+library(knitr)
 ```
 
 ## Create a GitHub Account
