@@ -6,6 +6,7 @@ output:
   html_document:
     toc: true
     toc_float: true
+    number_sections: true
 bibliography: bibliography.bib
 link-citations: yes
 ---
@@ -393,7 +394,7 @@ knitr::include_graphics("images/ResolvePullRequest.PNG")
 
 ## Cloning, Branching, and Forking, Oh My!
 
-Cloning, branching, and forking are functions that are similar, but they are not the same. When you *clone* a repository, you are connected to it and are working in that repository. You can commit changes and push them to the same repository. When you create a *branch*, you create a copy where you can work on a specific part of a document or run test code with the intent to merge it back to the main branch. Many branches are short-lived and deleted once their purpose has been served. Anyone that has access to the repository also has access to the branches in it. A *fork* creates a copy of the entire repository as well, however, the collaborators are disconnected from it. The intent is generally to diverge from the original repository and never be merged back into it.
+Cloning, branching, and forking are functions that are similar, but they are not the same. When you **clone** a repository, you are connected to it and are working in that repository. You can commit changes and push them to the same repository. When you create a **branch**, you create a copy where you can work on a specific part of a document or run test code with the intent to merge it back to the main branch. Many branches are short-lived and deleted once their purpose has been served. Anyone that has access to the repository also has access to the branches in it. A **fork** creates a copy of the entire repository as well, however, the collaborators are disconnected from it. The intent is generally to diverge from the original repository and never be merged back into it.
 
 ## .gitignore and Large Files
 
@@ -419,7 +420,7 @@ If at any point you find you have made a commit that should not have been made (
 knitr::include_graphics("images/amend_commit_box.PNG")
 ```
 
-# Installing a Git Client
+## Installing a Git Client
 
 With all of the commits, branching, merging, and collaboration, it can be tricky to keep track of everything going on in your repository. Viewing the commit history in GitHub or under the Git tab in RStudio is useful, though it can still be a little hard to follow. Using a Git client software helps visualize the workflow and allows you to use commands in the graphic user interface (GUI) that you would normally need to type into the terminal.
 
@@ -435,5 +436,3 @@ There are a few Git Clients out there and you may want to try a few to see what 
 
 ::: {#refs}
 :::
-
-This should create a merge conflict
