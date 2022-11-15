@@ -156,6 +156,10 @@ You should see a window pop up telling you what changes were successfully made. 
 
 Save and commit frequently in order to get the most use out of your version control.
 
+### Restoring a Previous Commit
+
+There may come a time when you would like to restore a previous version of your documents. There are a few ways to do this 
+
 ## Branches and Merging
 
 ### Branches
