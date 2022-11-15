@@ -10,8 +10,6 @@ bibliography: bibliography.bib
 link-citations: yes
 ---
 
-<!-- can't install klippy -->
-
 ```{r klippy, echo=FALSE, include=TRU}
 klippy::klippy(
   lang = c("r", "markdown", "bash"),
