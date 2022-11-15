@@ -420,3 +420,5 @@ There are a few Git Clients out there and you may want to try a few to see what 
 
 ::: {#refs}
 :::
+
+Merge Conflict
