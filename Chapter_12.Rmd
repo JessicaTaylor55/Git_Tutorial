@@ -159,10 +159,6 @@ You should see a window pop up telling you what changes were successfully made. 
 
 Save and commit frequently in order to get the most use out of your version control.
 
-### Restoring a Previous Commit
-
-There may come a time when you would like to restore a previous version of your documents. There are a few ways to do this
-
 ## Branches and Merging
 
 ### Branches
@@ -408,10 +404,6 @@ If at any point you find you have made a commit that should not have been made (
 
 knitr::include_graphics("images/amend_commit_box.PNG")
 ```
-
-## Recovering old versions
-
-((this might get covered in the version control section?)) ((We covered it in a previous class with the SHA. Maybe we can just do a quick reminder?))\
 
 # Installing a Git Client
 
