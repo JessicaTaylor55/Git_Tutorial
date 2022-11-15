@@ -1715,7 +1715,8 @@ on your needs.</li>
 GitHub Doc</a> focuses more on using GitHub.</li>
 <li><a href="https://ohshitgit.com/">Oh S#!*, Git!?!</a> provides tools
 for when mistakes are made (e.g., committing to the wrong branch) and
-how to fix them in the terminal. Note: this page contains a lot of swear
+how to fix them in the terminal (See the section <a href="#install-a-git-client">Install a Git Client</a> to do these things
+using a graphic user interface). Note: this page contains a lot of swear
 words.</li>
 </ul>
 </div>
@@ -1723,6 +1724,9 @@ words.</li>
 <h1>Getting Started</h1>
 <div id="installload-required-package" class="section level2">
 <h2>Install/Load Required Package</h2>
+<p>Load the following package in RStudio. If you do not have it
+installed, you can install it using
+<code>install.packages(&quot;usethis&quot;)</code>.</p>
 <pre class="r"><code>library(usethis)</code></pre>
 </div>
 <div id="create-a-github-account" class="section level2">
@@ -1776,25 +1780,25 @@ somewhere</strong></p>
 <pre class="r"><code>usethis::create_github_token()
 gitcreds::gitcreds_set()</code></pre>
 </div>
-<div id="basic-structure" class="section level2">
-<h2>Basic Structure</h2>
-<p>((maybe explain what a repository is and about README files?))</p>
 </div>
-</div>
-<div id="version-control-with-git" class="section level1">
-<h1>Version Control (with Git)</h1>
+<div id="what-does-git-do" class="section level1">
+<h1>What Does Git do?</h1>
+<div id="version-control" class="section level2">
+<h2>Version Control</h2>
 <p>The main function of Git is version control. This means Git will
 track the changes you make so you can revert to (or view) previous
 versions of the document. In order for this to work effectively, you
 need to frequently commit versions of your work.</p>
+</div>
 <div id="setting-up-a-local-repository" class="section level2">
 <h2>Setting Up a Local Repository</h2>
-<p>You can create a repository that is located only on your device
-(therefore it is considered “local”). This will allow you to track
-changes to a project on your computer and access previous versions of
-the document at any time. We will look at how to create a local
-repository using Rstudio, but know that it is also possible to do this
-using the terminal. (See page 96 of <span class="citation">Gandrud (<a href="#ref-Gandrud_2015" role="doc-biblioref">2015</a>)</span>)</p>
+<p>Another function of Git is to store all your relevant files in a
+repository, similar to a project. You can create a repository that is
+located only on your device (therefore it is considered “local”). This
+will allow you to track changes to a project on your computer and access
+previous versions of the document at any time. We will look at how to
+create a local repository using Rstudio, but know that it is also
+possible to do this using the terminal. (See page 96 of <span class="citation">Gandrud (<a href="#ref-Gandrud_2015" role="doc-biblioref">2015</a>)</span>)</p>
 <ol style="list-style-type: decimal">
 <li>In Rstudio, select <code>File</code> in the top left corner, and
 then <code>New Project</code><br />
@@ -1817,9 +1821,8 @@ to the location where you want it saved on your computer, and select the
 <code>.gitignore</code> file. There is also a hidden <code>.git</code>
 folder that stores all the project information, including the version
 history files (commit history).</p>
-</div>
-<div id="adding-staging-and-committing" class="section level2">
-<h2>Adding, Staging, and Committing</h2>
+<div id="adding-staging-and-committing" class="section level3">
+<h3>Adding, Staging, and Committing</h3>
 <p>You can create new files or move existing files (including your data)
 into this project folder, and Git can track changes made to them. In
 order to do this, you will need to “add” files that have been created or
@@ -1847,6 +1850,7 @@ halted”, or “aborted”, this means the commit did not work and you should
 read the message closely to determine why.</p>
 <p>Save and commit frequently in order to get the most use out of your
 version control.</p>
+</div>
 </div>
 <div id="branches-and-merging" class="section level2">
 <h2>Branches and Merging</h2>
@@ -2023,7 +2027,7 @@ the copied link.</li>
 what this means later, but for now run the following line in the
 terminal.</li>
 </ol>
-<pre class="bash"><code>$ git push orgin main</code></pre>
+<pre class="bash"><code>$ git push origin main</code></pre>
 <p>Now when you return to GitHub and refresh your repository page, you
 should see all of the files from your existing project.</p>
 <p>You can add a <code>README</code> and <code>.gitignore</code> on the
@@ -2114,6 +2118,12 @@ from the repository at any time.</p>
 covered it in a previous class with the SHA. Maybe we can just do a
 quick reminder?)) ## “Tags”</p>
 </div>
+</div>
+<div id="install-a-git-client" class="section level1">
+<h1>Install a Git Client</h1>
+<p>Using a Git client software helps visualize the workflow and allows
+you to use commands in the graphic user interface (GUI) that you would
+normally need to type into the terminal.</p>
 </div>
 <div id="references" class="section level1">
 <h1>References</h1>
