@@ -9,7 +9,8 @@ output:
 bibliography: bibliography.bib
 link-citations: yes
 ---
-<!-- can't install klippy --> 
+
+<!-- can't install klippy -->
 
 ```{r klippy, echo=FALSE, include=TRUE, eval = FALSE}
 klippy::klippy(
@@ -41,6 +42,7 @@ The following resources have similar information and each will get you to roughl
 -   [Happy Git With R](https://happygitwithr.com/index.html) provides a good starter guide with a few different approaches depending on your needs.
 -   [This GitHub Doc](https://docs.github.com/en/get-started/quickstart) focuses more on using GitHub.
 -   [Oh S#!\*, Git!?!](https://ohshitgit.com/) provides tools for when mistakes are made (e.g., committing to the wrong branch) and how to fix them in the terminal (See the section [Install a Git Client] to do these things using a graphic user interface). Note: this page contains a lot of swear words.
+-   [This article](https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git#:~:text=Forking%20creates%20a%20full%20copy,what%20branch%20you%20are%20using.) from pluralsight clarifies the difference between a branch and a fork.
 
 # Getting Started
 
@@ -96,16 +98,16 @@ usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepri
 
 ## Get a Personal Access Token
 
-A personal access token (PAT) is used for GitHub as a type of authentication. You used to be able to use your username and password, but not any more. The token-based authentication has increased security. 
+A personal access token (PAT) is used for GitHub as a type of authentication. You used to be able to use your username and password, but not any more. The token-based authentication has increased security.
 
-You do not need to run create_github_token() if you already have one. If you are unsure if you have already input your PAT into RStudio, you can run gitcreds_set() and R will tell you your current credentials. Select option `3: See the password / token`. Change the current password to your new token. 
+You do not need to run create_github_token() if you already have one. If you are unsure if you have already input your PAT into RStudio, you can run gitcreds_set() and R will tell you your current credentials. Select option `3: See the password / token`. Change the current password to your new token.
 
 ```{r, eval = FALSE}
 usethis::create_github_token()
 gitcreds::gitcreds_set()
 ```
 
-# What Does Git do? 
+# What Does Git do?
 
 ## Version Control
 
@@ -159,7 +161,7 @@ Save and commit frequently in order to get the most use out of your version cont
 
 ### Restoring a Previous Commit
 
-There may come a time when you would like to restore a previous version of your documents. There are a few ways to do this 
+There may come a time when you would like to restore a previous version of your documents. There are a few ways to do this
 
 ## Branches and Merging
 
@@ -371,17 +373,21 @@ Add your collaborators one at a time. This will send them a message inviting the
 
 As the owner of the repository, you will be able to remove people from the repository at any time.
 
-## "Merge Conflicts"
+## Merge Conflicts
 
-When two people are working on a branch  at the same time, changes were made and not pushed before someone else started working, or a collaborator forgets to pull before starting to make changes, a merge conflict may arise. Merge conflicts happen because Git is not sure how to combine the different changes that occurred in the same sections of the document. In some instances, Git is smart enough to figure it out and will merge the versions on its own. Other times, the merge conflict will be left for the latter editor to fix manually. Note that Git will not allow the second person to push until they have resolved the issues.
+When two people are working on a branch at the same time, changes were made and not pushed before someone else started working, or a collaborator forgets to pull before starting to make changes, a merge conflict may arise. Merge conflicts happen because Git is not sure how to combine the different changes that occurred in the same sections of the document. In some instances, Git is smart enough to figure it out and will merge the versions on its own. Other times, the merge conflict will be left for the latter editor to fix manually. Note that Git will not allow the second person to push until they have resolved the issues.
 
-If a merge conflict occurs, you will see some specific things added to your code. There will be a line at the beginning that starts with `>>>>>>>`, a line at the end starting with `<<<<<<<<` and a line in the middle that just has `--------`. The two different version are shown above and below the middle line. It is your job to decide how these versions fit together. Once you have modified the code to match the final version you want to keep, you can delete the three lines of code containing the `>`, `<` and `-` symbols and "add" and "commit" your files as usual. 
+If a merge conflict occurs, you will see some specific things added to your code. There will be a line at the beginning that starts with `>>>>>>>`, a line at the end starting with `<<<<<<<<` and a line in the middle that just has `--------`. The two different version are shown above and below the middle line. It is your job to decide how these versions fit together. Once you have modified the code to match the final version you want to keep, you can delete the three lines of code containing the `>`, `<` and `-` symbols and "add" and "commit" your files as usual.
 
 # Extras
 
-## "gitignore" and Large Files
+## Cloning, Branching, and Forking, Oh My!
 
-GitHub does not allow repositories to be larger than 5GB. While we recommend keeping all of the files necessary to run your analysis together in the repo, this may not be possible if say for example your data files are larger than the size limit. If this is the case, you can manually distribute your data file a different way. (See https://git-lfs.github.com/ first though if this is an issue you are actually having.)
+Cloning, branching, and forking are functions that are similar, but they are not the same. When you *clone* a repository, you are connected to it and are working in that repository. You can commit changes and push them to the same repository. When you create a *branch*, you create a copy where you can work on a specific part of a document or run test code with the intent to merge it back to the main branch. Many branches are short-lived and deleted once their purpose has been served. Anyone that has access to the repository also has access to the branches in it. A *fork* creates a copy of the entire repository as well, however, the collaborators are disconnected from it. The intent is generally to diverge from the original repository and never be merged back into it.
+
+## .gitignore and Large Files
+
+GitHub does not allow repositories to be larger than 5GB. While we recommend keeping all of the files necessary to run your analysis together in the repo, this may not be possible if say for example your data files are larger than the size limit. If this is the case, you can manually distribute your data file a different way. (See <https://git-lfs.github.com/> first though if this is an issue you are actually having.)
 
 Once all collaborators (or just you) have the large data file in your Git repo, you may forget that you cannot send this to GitHub and accidentally try to commit and push it. Fortunately, Git will recognize the problem before it takes place and will give you the following warning:
 
@@ -390,12 +396,13 @@ Once all collaborators (or just you) have the large data file in your Git repo, 
 knitr::include_graphics("images/large_file_warning.PNG")
 ```
 
-To resolve this problem, you just need to tell Git to not track the large file. First, determine which file(s) is/are too big by looking at their size. Then, navigate to your `.gitignore` document and open it. Last, add the name(s) of the file(s) that is/are too large. Now you will be able to commit and push the tracked files within your repository.
+To resolve this problem, you just need to tell Git to ignore the large file when you make your commit. First, determine which file(s) is/are too big by looking at their size. Then, navigate to your `.gitignore` document and open it. Last, add the name(s) of the file(s) that is/are too large. Now you will be able to commit and push the tracked files within your repository.
 
+You can add any files you do not want to be tracked to .gitignore. An example is the html file generated by rendering this document. It is regenerated constantly, so there is no need to track the changes.
 
-## "Amend Commits"
+## Amend Commits
 
-If at any point you find you have made a commit that should not have been made (e.x. you accidentally added and committed files that are too large and now you aren't able to push), you can easily fix this by making the necessary changes within your files, checking the "amend previous commit" box on the commit screen, and then committing as usual. This will overwrite your previous commit with the correct version you want to commit. If you need to amend an earlier commit (i.e. not the most recent commit), you will need to use the terminal (See [Oh S#!\*, Git!?!](https://ohshitgit.com/)). 
+If at any point you find you have made a commit that should not have been made (e.x. you accidentally added and committed files that are too large and now you aren't able to push), you can easily fix this by making the necessary changes within your files, checking the "amend previous commit" box on the commit screen, and then committing as usual. This will overwrite your previous commit with the correct version you want to commit. If you need to amend an earlier commit (i.e. not the most recent commit), you will need to use the terminal (See [Oh S#!\*, Git!?!](https://ohshitgit.com/)).
 
 ```{r, echo = FALSE, out.width = '40%', fig.align = 'center'}
 
@@ -404,16 +411,21 @@ knitr::include_graphics("images/amend_commit_box.PNG")
 
 ## Recovering old versions
 
-((this might get covered in the version control section?)) ((We covered it in a previous class with the SHA. Maybe we can just do a quick reminder?)) \
+((this might get covered in the version control section?)) ((We covered it in a previous class with the SHA. Maybe we can just do a quick reminder?))\
 
-## "Tags"
+# Installing a Git Client
 
-# Install a Git Client
+With all of the commits, branching, merging, and collaboration, it can be tricky to keep track of everything going on in your repository. Viewing the commit history in GitHub or under the Git tab in RStudio is useful, though it can still be a little hard to follow. Using a Git client software helps visualize the workflow and allows you to use commands in the graphic user interface (GUI) that you would normally need to type into the terminal.
 
-Using a Git client software helps visualize the workflow and allows you to use commands in the graphic user interface (GUI) that you would normally need to type into the terminal.
+```{r, echo = FALSE, out.width = '100%', fig.align = 'center'}
+
+knitr::include_graphics("images/GitKraken.PNG")
+
+```
+
+There are a few Git Clients out there and you may want to try a few to see what works for you. I use GitKraken which you can download [here.](https://www.gitkraken.com/download)
 
 # References
 
 ::: {#refs}
 :::
-
