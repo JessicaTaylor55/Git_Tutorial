@@ -1,0 +1,41 @@
+---
+title: "Chapter 12: Git and Github"
+author: "Nora and Jess"
+date: "`r Sys.Date()`"
+output: powerpoint_presentation
+---
+# What are Git and Github?
+
+- Downloadable Software
+- Website
+- Integrated into Rstudio
+
+# Why are Git and Github?
+
+- Version Control
+- Collaboration
+- Open Access/Reproducible
+
+# How are Git and Github?
+
+- Create an Account, Install, and Introduce
+- Set Up a Repository
+- Pull, Commit, and Push
+
+# One Hashtag For Title
+ 
+No Hasthag For Text
+
+## Two Hashtag for Subtitle
+
+No Hashtag Again
+
+## Subtitle Again
+
+- Now a bullet Point
+- And Another
+
+
+ 
+
+ 
