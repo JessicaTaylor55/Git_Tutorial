@@ -29,13 +29,13 @@ Being able to track changes, revert to previous versions, and collaborate effici
 ## Learning Outcomes
 
 -   Create a repository to track changes and version history locally using Git.
--   Use branches (copies) to work on a documents in a repository without changing the master.
+-   Use branches (copies) to work on documents in a repository without changing the master.
 -   Use GitHub to store a repository remotely.
 -   Become familiar with the basics of using GitHub for file sharing and collaboration.
 
 ## Resources
 
-The following resources have similar information and each will get you to roughly the same place, though the approach is different. I found it helpful to go through several as some have explanations or examples that are unique and helped me have a more well-rounded understanding of the concepts.
+The following resources have are great to get you started with Git and GitHub. Although some have very similar information, I found it helpful to go through them all as some have explanations or examples that are unique and helped me have a more well-rounded understanding of the concepts.
 
 -   This chapter is largely based off of chapter 5 in @Gandrud_2015.
 -   [Happy Git With R](https://happygitwithr.com/index.html) provides a good starter guide with a few different approaches depending on your needs.
@@ -47,7 +47,7 @@ The following resources have similar information and each will get you to roughl
 
 ## Install/Load Required Package
 
-Load the following packages in RStudio. If you do not have them installed, you can do so using `install.packages()`.
+Load the following packages in RStudio. If you do not have them installed, you can do so using `install.packages()`, or run the `Chapter_12_packages.R` script in this repository. 
 
 ```{r load packages, warning = FALSE}
 library(usethis)
@@ -111,7 +111,7 @@ gitcreds::gitcreds_set()
 
 ## Version Control
 
-The main function of Git is version control. This means Git will track the changes you make so you can revert to (or view) previous versions of the document. In order for this to work effectively, you need to frequently commit versions of your work.
+The main function of Git is version control. This means Git will track the changes you make so you can revert to (or view) previous versions of the document. In order for this to work effectively, you need to start tracking your changes (make a repository) and frequently create versions with changes you have made (committing).
 
 ## Setting Up a Local Repository
 
@@ -371,7 +371,7 @@ As the owner of the repository, you will be able to remove people from the repos
 
 ## Merge Conflicts
 
-When two people are working on a branch at the same time, changes were made and not pushed before someone else started working, or a collaborator forgets to pull before starting to make changes, a merge conflict may arise. Merge conflicts happen because Git is not sure how to combine the different changes that occurred in the same sections of the document. In some instances, Git is smart enough to figure it out and will merge the versions on its own. Other times, the merge conflict will be need to be fixed manually. Note that Git will not allow the push until the merge conflict is solved. 
+When two people are working on a branch at the same time, changes were made and not pushed before someone else started working, or a collaborator forgets to pull before starting to make changes, a merge conflict may arise. Merge conflicts happen because Git is not sure how to combine the different changes that occurred in the same sections of the document. In some instances, Git is smart enough to figure it out and will merge the versions on its own. Other times, the merge conflict will be need to be fixed manually. Note that Git will not allow the push until the merge conflict is solved.
 
 If a merge conflict occurs, you will see some specific things added to your code. There will be a line at the beginning that starts with `<<<<<<<`, a line at the end starting with `>>>>>>>` and a line in the middle that just has `=======`. The two different version are shown above and below the middle line, labeled with which branch has which version. It is your job to decide how these versions fit together. Once you have modified the code to match the final version you want to keep, you can delete the three lines of code containing the `>`, `<` and `=` symbols and "stage" and "commit" your files as usual.
 
@@ -381,14 +381,13 @@ knitr::include_graphics("images/MergeConflict.PNG")
 
 ### On GitHub
 
-You can also merge branches and resolve merge conflicts on GitHub. You would push your branch to GitHub, then go to the GitHub repo webpage. You will need to create a pull request to merge your branch. If there is a merge conflict, you will need to click on "Resolve conflicts" before you can merge your branch. The syntax to edit the document and resolve the conflict is the same as above. 
+You can also merge branches and resolve merge conflicts on GitHub. You would push your branch to GitHub, then go to the GitHub repo webpage. You will need to create a pull request to merge your branch. If there is a merge conflict, you will need to click on "Resolve conflicts" before you can merge your branch. The syntax to edit the document and resolve the conflict is the same as above.
 
 ```{r pull request, echo = FALSE, fig.align = "center"}
 
 knitr::include_graphics("images/ResolvePullRequest.PNG")
 
 ```
-
 
 # Extras
 
