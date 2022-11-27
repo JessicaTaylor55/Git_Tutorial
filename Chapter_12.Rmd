@@ -115,6 +115,12 @@ usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepri
 
 A personal access token (PAT) is used for GitHub as a type of authentication. You used to be able to use your username and password, but not any more. The token-based authentication has increased security.
 
+Before generating a new PAT, check to see if you already have one. 
+
+```{r}
+gitcreds::gitcreds_set()
+```
+
 The first line of code in the code chunk below, `create_github_token()`, will create a PAT for you, however, you do not need to run this if you already have one. If you are unsure if you have already input your PAT into RStudio, you can run `gitcreds_set()` and R will tell you your current credentials. Select option `3: See the password / token`. If your PAT is not shown here, select option `2: Replace these credentials` to change the current password to your new token.
 
 ```{r pat, eval = FALSE}
