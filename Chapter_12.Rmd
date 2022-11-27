@@ -25,7 +25,6 @@ if(length(new.pkg2) > 0){
 }
 ```
 
-
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy(
   lang = c("r", "markdown", "bash"),
@@ -62,7 +61,7 @@ The following resources are great to get you started with Git and GitHub. Althou
 
 ## Install/Load Required Package
 
-Load the following packages in RStudio. If you do not have them installed, you can do so using `install.packages()`, or run the `Chapter_12_packages.R` script in this repository. 
+Load the following packages in RStudio. If you do not have them installed, you can do so using `install.packages()`, or run the `Chapter_12_packages.R` script in this repository.
 
 ```{r load packages, warning = FALSE}
 library(usethis)
@@ -87,7 +86,7 @@ which git
 git --version
 ```
 
-You will get something like the above output if Git is already installed. If it is not installed, see below.
+You will get something like the above output if Git is already installed. If it is not installed, you will get something like `git: command not found`.
 
 ### Windows
 
@@ -105,7 +104,7 @@ xcode-select --install
 
 Once Git is successfully installed and you have a GitHub account, you will need to let R/Git know your account information to access the remote repositories.
 
-Enter the following in the `Terminal` tab, substituting the user name and email with your GitHub user name and email:
+Enter the following in the `Console` tab, substituting the user name and email with your GitHub user name and email:
 
 ```{r git introduction, eval = FALSE}
 usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepriceisright.org")
@@ -115,17 +114,17 @@ usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepri
 
 A personal access token (PAT) is used for GitHub as a type of authentication. You used to be able to use your username and password, but not any more. The token-based authentication has increased security.
 
-Before generating a new PAT, check to see if you already have one. 
+Before generating a new PAT, check to see if you already have one. Run `gitcreds_set()` and one of two things will happen:
 
-```{r}
+1) R will prompt you to enter a token. This means you don't already have one and need to create one. Hit `Esc` and run the second line of code, `create_github_token()`. This will bring you to GitHub where you can create a token. Save this token somewhere safe - you will not be able to access it via GitHub again.
+
+2) R will show you the saved credentials (username and password) and give you options to exit without changing (1: Abort), replace the credentials, or to see the current token. This means you already have a token and can keep it or change it if it has expired. If it expired and you need a new one, run `create_github_token()`.
+
+```{r, eval = FALSE}
+## Run this to see if you already have credentials, or to change them
 gitcreds::gitcreds_set()
-```
-
-The first line of code in the code chunk below, `create_github_token()`, will create a PAT for you, however, you do not need to run this if you already have one. If you are unsure if you have already input your PAT into RStudio, you can run `gitcreds_set()` and R will tell you your current credentials. Select option `3: See the password / token`. If your PAT is not shown here, select option `2: Replace these credentials` to change the current password to your new token.
-
-```{r pat, eval = FALSE}
-usethis::create_github_token()
-gitcreds::gitcreds_set()
+## Only run this if you need to generate a token
+create_github_token()
 ```
 
 # What Does Git do?
@@ -456,6 +455,7 @@ There are a few Git Clients out there and you may want to try a few to see what 
 
 ::: {#refs}
 :::
+
 \
 \
 \
