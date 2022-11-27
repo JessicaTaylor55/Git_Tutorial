@@ -11,6 +11,21 @@ bibliography: bibliography.bib
 link-citations: yes
 ---
 
+```{r install_packages, include=FALSE}
+pkg <- c("knitr", "usethis", "gitcreds", "remotes")
+pkg2 <-"klippy"
+new.pkg <- pkg[!(pkg %in% installed.packages())]
+new.pkg2 <- pkg2[!(pkg2 %in% installed.packages())]
+if(length(new.pkg) > 0){
+  install.packages(new.pkg, dependencies = TRUE)
+}
+
+if(length(new.pkg2) > 0){
+  remotes::install_github("rlesur/klippy")
+}
+```
+
+
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy(
   lang = c("r", "markdown", "bash"),
@@ -35,7 +50,7 @@ Being able to track changes, revert to previous versions, and collaborate effici
 
 ## Resources
 
-The following resources have are great to get you started with Git and GitHub. Although some have very similar information, I found it helpful to go through them all as some have explanations or examples that are unique and helped me have a more well-rounded understanding of the concepts.
+The following resources are great to get you started with Git and GitHub. Although some have very similar information, I found it helpful to go through them all as some have explanations or examples that are unique and helped me have a more well-rounded understanding of the concepts.
 
 -   This chapter is largely based off of chapter 5 in @Gandrud_2015.
 -   [Happy Git With R](https://happygitwithr.com/index.html) provides a good starter guide with a few different approaches depending on your needs.
@@ -100,7 +115,7 @@ usethis::use_git_config(user.name = "Bob Barker", user.email = "bobbarker@thepri
 
 A personal access token (PAT) is used for GitHub as a type of authentication. You used to be able to use your username and password, but not any more. The token-based authentication has increased security.
 
-You do not need to run create_github_token() if you already have one. If you are unsure if you have already input your PAT into RStudio, you can run gitcreds_set() and R will tell you your current credentials. Select option `3: See the password / token`. Change the current password to your new token.
+The first line of code in the code chunk below, `create_github_token()`, will create a PAT for you, however, you do not need to run this if you already have one. If you are unsure if you have already input your PAT into RStudio, you can run `gitcreds_set()` and R will tell you your current credentials. Select option `3: See the password / token`. If your PAT is not shown here, select option `2: Replace these credentials` to change the current password to your new token.
 
 ```{r pat, eval = FALSE}
 usethis::create_github_token()
@@ -163,7 +178,7 @@ Save and commit frequently in order to get the most use out of your version cont
 
 ### Branches
 
-A new repository will have one branch called `main`. You can think of this as the master. You can create additional branches which are an exact copy of the main branch where you can make changes without committing them to the master. This is useful when several people are working on the same thing, or if you want to try multiple approaches to the same file (i.e. test run some code).
+A new repository will have one branch called `main`. You can think of this as the master version. You can create additional branches which are an exact copy of the main branch where you can make changes without committing them to the master. This is useful when several people are working on the same thing, or if you want to try multiple approaches to the same file (i.e. test run some code).
 
 To create a branch, select the button with small purple shapes on the right hand side of your `Git` tab in Rstudio.
 
@@ -435,3 +450,6 @@ There are a few Git Clients out there and you may want to try a few to see what 
 
 ::: {#refs}
 :::
+\
+\
+\
